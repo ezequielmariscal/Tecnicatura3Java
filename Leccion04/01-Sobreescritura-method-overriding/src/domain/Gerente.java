@@ -9,6 +9,7 @@ public class Gerente extends Empleado{
         super(nombre, sueldo);
         this.departamento = departamento;
     }
+    // Sobreescribimos el metodo
 
     @Override
     public String obtenerDetalle() {
