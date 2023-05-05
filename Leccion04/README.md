@@ -1,0 +1,7 @@
+# Tecnicatura3Java Leccion04 ... 
+## Method overriding sobreescritura
+### La sobreescritura de métodos (overriding) es un concepto en programación orientada a objetos en el que una subclase proporciona una implementación específica de un método que ya está definido en su superclase. La subclase reemplaza la implementación del método de la superclase, lo que permite que la subclase proporcione su propia versión del comportamiento del método.
+
+### Para realizar la sobreescritura de un método en Java, la subclase debe declarar el mismo nombre, tipo de retorno y lista de argumentos que el método que se está sobrescribiendo en la superclase. La palabra clave @Override se puede utilizar para indicar que un método está sobrescribiendo otro método en la superclase.
+
+### La sobreescritura de métodos es una forma importante de implementar la herencia en Java. Permite que las subclases proporcionen su propia implementación de un método que se define en la superclase, lo que les permite extender o modificar el comportamiento de la superclase. También permite que las subclases aprovechen la funcionalidad de la superclase, al tiempo que proporcionan su propia lógica adicional en los métodos que sobrescriben.
