@@ -17,3 +17,8 @@
 - Polimorfismo de sobrescritura: ocurre cuando una subclase proporciona su propia implementación de un método que ya está definido en su superclase. El método de la subclase debe tener el mismo nombre, tipo de retorno y lista de argumentos que el método en la superclase. En tiempo de ejecución, Java utiliza la implementación del método de la subclase en lugar del método de la superclase correspondiente.
 
 ### El polimorfismo es una característica importante de la programación orientada a objetos, ya que permite escribir código más genérico y flexible. Al utilizar el polimorfismo, se pueden crear clases más especializadas y extender la funcionalidad de una clase base sin tener que modificarla directamente.
+
+##Instance Of
+
+### instanceof es un operador en Java que se utiliza para comprobar si un objeto es una instancia de una clase o de una subclase de esa clase. En otras palabras, el operador instanceof devuelve true si el objeto en cuestión es una instancia de la clase especificada o de cualquier subclase de esa clase, y devuelve false en caso contrario.
+
