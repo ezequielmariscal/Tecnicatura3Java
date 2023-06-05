@@ -12,3 +12,7 @@
 ### Los JavaBeans son utilizados principalmente en entornos de desarrollo visual y en la construcción de interfaces gráficas de usuario (GUI) en aplicaciones de escritorio. Al seguir la especificación de JavaBeans, estos componentes se vuelven fácilmente reutilizables y manipulables visualmente en herramientas de desarrollo visual, como los entornos de desarrollo integrados (IDE).
 
 ### Además, los JavaBeans también son utilizados en tecnologías como JavaServer Faces (JSF) y JavaBeans Activation Framework (JAF) para manejar eventos y administrar componentes en aplicaciones empresariales. En resumen, JavaBeans es una especificación que promueve la reutilización y la modularidad en la programación orientada a objetos en Java.
+
+## Serializable
+
+### Convierto mis objetos a 0 y 1 (bytes), asi puedo transportar mi codigo a otros servidores.
