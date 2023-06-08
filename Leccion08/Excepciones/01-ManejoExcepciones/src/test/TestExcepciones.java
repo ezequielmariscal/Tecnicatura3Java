@@ -10,6 +10,7 @@ public class TestExcepciones {
         }catch(Exception e){
             System.out.println("Ocurrio un Error");
             e.printStackTrace(System.out); // Se conoce como la pila de excepciones
+            System.out.println(e.getMessage());
         }
         System.out.println("La variable de resultado tiene como valor : " +resultado);
     }
