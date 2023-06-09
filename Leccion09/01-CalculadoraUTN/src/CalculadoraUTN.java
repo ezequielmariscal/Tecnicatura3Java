@@ -9,31 +9,7 @@ public class CalculadoraUTN {
             try {
                 var operacion = Integer.parseInt(entrada.nextLine());
                 if (operacion >= 1 && operacion <= 4) {
-                    System.out.print("Digite el valor para el operando 1: ");
-                    var operando1 = Integer.parseInt(entrada.nextLine());
-                    System.out.print("Digite el  valor para el operando 2: ");
-                    var operando2 = Integer.parseInt(entrada.nextLine());
-
-                    int resultado;
-                    switch (operacion) {
-                        case 1 -> { // Suma
-                            resultado = operando1 + operando2;
-                            System.out.println("Resultado de la suma: " + resultado);
-                        }
-                        case 2 -> { //Resta
-                            resultado = operando1 - operando2;
-                            System.out.println("Resultado de la resta: " + resultado);
-                        }
-                        case 3 -> { // Multiplicacion
-                            resultado = operando1 * operando2;
-                            System.out.println("Resultado de la multiplicacion: " + resultado);
-                        }
-                        case 4 -> { // Division
-                            resultado = operando1 / operando2;
-                            System.out.println("Resultado de la division: " + resultado);
-                        }
-                        default -> System.out.println("Opcion erronea" + operacion);
-                    } // Fin switch
+                    ejecutarOperacion(operacion, entrada);
                 } // Fin del if
                 else if (operacion == 5) {
                     System.out.println("Hasta pronto...");
@@ -60,5 +36,32 @@ public class CalculadoraUTN {
                     5. Salir
                     """);
         System.out.println("Operacion a realizar?");
+    } // Fin metodo mostrarMenu
+
+    private static void ejecutarOperacion(int operacion, Scanner entrada){
+        System.out.print("Digite el valor para el operando 1: ");
+        var operando1 = Integer.parseInt(entrada.nextLine());
+        System.out.print("Digite el  valor para el operando 2: ");
+        var operando2 = Integer.parseInt(entrada.nextLine());
+        int resultado;
+        switch (operacion) {
+            case 1 -> { // Suma
+                resultado = operando1 + operando2;
+                System.out.println("Resultado de la suma: " + resultado);
+            }
+            case 2 -> { //Resta
+                resultado = operando1 - operando2;
+                System.out.println("Resultado de la resta: " + resultado);
+            }
+            case 3 -> { // Multiplicacion
+                resultado = operando1 * operando2;
+                System.out.println("Resultado de la multiplicacion: " + resultado);
+            }
+            case 4 -> { // Division
+                resultado = operando1 / operando2;
+                System.out.println("Resultado de la division: " + resultado);
+            }
+            default -> System.out.println("Opcion erronea" + operacion);
+        } // Fin switch
     }
 } // Fin clase
