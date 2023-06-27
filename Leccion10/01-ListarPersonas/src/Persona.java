@@ -18,4 +18,47 @@ public class Persona {
         this.tel = tel;
         this.email = email;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override // estamos sobreescribiendo un objeto de la clase padre - nos ayuda para que en memoria no se pase la referencia
+    
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", tel='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
