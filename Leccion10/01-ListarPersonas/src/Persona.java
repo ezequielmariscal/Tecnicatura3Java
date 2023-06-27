@@ -52,7 +52,7 @@ public class Persona {
     }
 
     @Override // estamos sobreescribiendo un objeto de la clase padre - nos ayuda para que en memoria no se pase la referencia
-    
+
     public String toString() {
         return "Persona{" +
                 "id=" + id +
