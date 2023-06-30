@@ -11,6 +11,11 @@ public class ListadoPersonasApp {
         var salir = false;
         while (!salir){
             mostrarMenu();
+            try{
+                salir = ejecutarOperacion (entrada, personas);
+            } catch (Exception e){
+                System.out.println("Ocurrio un error: "+e.getMessage());
+            }
             System.out.println();
         }//Fin del ciclo while
     }//Fin metodo main
@@ -25,5 +30,9 @@ public class ListadoPersonasApp {
                
                 """);
         System.out.println("Digite una de las opciones: ");
-    }
-}
+    }// Fin metodo mostrarMenu
+
+    private static boolean ejecutarOperacion(Scanner entrada, List<Persona> personas){
+
+    }// fin del metodo ejecitarOperacion
+} // Fin de la clase ListadoPersonasApp
