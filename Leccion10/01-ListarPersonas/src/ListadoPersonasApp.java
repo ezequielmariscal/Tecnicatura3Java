@@ -49,6 +49,12 @@ public class ListadoPersonasApp {
                 // Agregamos la persona a la lista
                 personas.add(persona);
                 System.out.println("La lista tiene: "+personas.size()+ "ELEMENTOS");
+                 } // Fin caso 1
+            case  2 -> { // Listar a las personas
+                System.out.println("Listado de personas: ");
+                // Mejoras con lambda y el metodo de referencia
+                // personas.forEach((persona) -> System.out.println(persona));
+                personas.forEach(System.out::println); // :: se conoce como metodo de referencia
                  }
         }
 
