@@ -42,21 +42,27 @@ public class ListadoPersonasApp {
                 var nombre = entrada.nextLine();
                 System.out.print("Digite el telefono: ");
                 var tel = entrada.nextLine();
-                System.out.print("Digite el corre: ");
+                System.out.print("Digite el correo: ");
                 var email = entrada.nextLine();
                 // creamos el objeto persona
                 var persona = new Persona(nombre, tel, email);
                 // Agregamos la persona a la lista
                 personas.add(persona);
-                System.out.println("La lista tiene: "+personas.size()+ "ELEMENTOS");
+                System.out.println("La lista tiene: "+personas.size()+ "elemento");
                  } // Fin caso 1
             case  2 -> { // Listar a las personas
                 System.out.println("Listado de personas: ");
                 // Mejoras con lambda y el metodo de referencia
                 // personas.forEach((persona) -> System.out.println(persona));
                 personas.forEach(System.out::println); // :: se conoce como metodo de referencia
-                 }
-        }
+                 } // Fin caso 2
+            case 3 -> { // Salir del ciclo
+                System.out.println("Hasta pronto...");
+                salir = true;
+                } // Fin del caso 3
+            default -> System.out.println("Opcion incorrecta: "+opcion);
+        } // Fin del switch
+        return salir;
 
     }// fin del metodo ejecitarOperacion
 } // Fin de la clase ListadoPersonasApp
