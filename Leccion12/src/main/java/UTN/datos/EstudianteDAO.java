@@ -52,7 +52,7 @@ public class EstudianteDAO {
         String sql = "SELECT * FROM estudiantes2022 WHERE idestudiantes2022=?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(5, estudiante.getIdEstudiante());
+            ps.setInt(1, estudiante.getIdEstudiante());
             rs = ps.executeQuery();
             if (rs.next()) {
                 estudiante.setNombre(rs.getString("nombre"));
@@ -129,12 +129,16 @@ public class EstudianteDAO {
 
 
     public static void main(String[] args) {
-        //Listar los estudiantes
         var estudianteDAO = new EstudianteDAO();
-        System.out.println("Listado de estudiantes: ");
-        List<Estudiante> estudiantes = estudianteDAO.listarEstudiantes();
-        estudiantes.forEach(System.out::println); // Funcion lambda para imprimir
+        // Modificar estudiantes
+        var estudianteModificado = new Estudiante(1,"Juan Carlos", "Juarez", "456345345", "jjauarez@mail.com");
+        var modificado = estudianteDAO.modificarEstudiante(estudianteModificado);
+        if(modificado)
+            System.out.println("Estudiante modificado: "+estudianteModificado);
+        else
+            System.out.println("No se modfico el estudiante: "+estudianteModificado);
 
+        /*
         // Agregar estudiante
         var nuevoEstudiante = new Estudiante("Carlos", "Lara", "4356456456", "carlosl@mail.com");
         var agregado = estudianteDAO.agregarEstudiante(nuevoEstudiante);
@@ -142,6 +146,25 @@ public class EstudianteDAO {
             System.out.println("Estudiante agregado: "+nuevoEstudiante);
         else
             System.out.println("No se ha agregado estudiante: "+nuevoEstudiante);
+
+         */
+        /*
+        //Listar los estudiantes
+        var estudianteDAO = new EstudianteDAO();
+        System.out.println("Listado de estudiantes: ");
+        List<Estudiante> estudiantes = estudianteDAO.listarEstudiantes();
+        estudiantes.forEach(System.out::println); // Funcion lambda para imprimir
+
+        /*
+        // Agregar estudiante
+        var nuevoEstudiante = new Estudiante("Carlos", "Lara", "4356456456", "carlosl@mail.com");
+        var agregado = estudianteDAO.agregarEstudiante(nuevoEstudiante);
+        if (agregado)
+            System.out.println("Estudiante agregado: "+nuevoEstudiante);
+        else
+            System.out.println("No se ha agregado estudiante: "+nuevoEstudiante);
+
+         */
 
         // Buscar por id
         /*
