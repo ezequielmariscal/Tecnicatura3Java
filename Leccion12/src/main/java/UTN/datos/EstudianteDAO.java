@@ -24,13 +24,23 @@ public class EstudianteDAO {
             while(rs.next()){
                 var estudiante = new Estudiante();
                 estudiante.setIdEstudiante(rs.getInt("idestudiante2022"));
+                estudiante.setNombre(rs.getNString("nombre"));
+                estudiante.setApellido(rs.getNString("apellido"));
+                estudiante.setTelefono(rs.getNString("telefono"));
+                estudiante.setEmail(rs.getNString("email"));
+                // Falta agregarlo a la lista
+                estudiantes.add(estudiante);
             }
         } catch (Exception e){
             System.out.println("Ocurrio un error al seleccionar datos: "+e.getMessage());
         }
-
-
-
-
-    }
+        finally {
+            try{
+                con.close();
+            }catch (Exception e){
+                System.out.println("Ocurrio un error al cerrar la conexion: "+e.getMessage());
+            }
+        }// Fin finally
+        return estudiantes;
+    } // Fin metodo listar
 }
