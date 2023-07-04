@@ -82,13 +82,22 @@ public class EstudianteDAO {
         try{
             ps = con.prepareStatement(sql);
             ps.setString(1,estudiante.getNombre());
-            ps.setString(1,estudiante.getApellido());
-            ps.setString(1,estudiante.getTelefono());
-            ps.setString(1,estudiante.getEmail());
+            ps.setString(2,estudiante.getApellido());
+            ps.setString(3,estudiante.getTelefono());
+            ps.setString(4,estudiante.getEmail());
+            ps.execute(); // solo esxecute porq es para insertar
         }catch (Exception e){
             System.out.println("Ocurrio un error para agregar estudiante: "+e.getMessage());
-        }
-    }
+        } //Fin catch
+        finally {
+            try{
+                con.close();
+            } catch (Exception e){
+                System.out.println("Error al cerrar la conexion: "+e.getMessage());
+            }// Fin catch
+        }// Fin finally
+        return false;
+    } // Fin metodo agregarEstudiante
 
 
 
