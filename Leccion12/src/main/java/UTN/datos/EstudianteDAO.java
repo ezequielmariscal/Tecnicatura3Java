@@ -52,7 +52,7 @@ public class EstudianteDAO {
         String sql = "SELECT * FROM estudiantes2022 WHERE idestudiantes2022=?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, estudiante.getIdEstudiante());
+            ps.setInt(5, estudiante.getIdEstudiante());
             rs = ps.executeQuery();
             if (rs.next()) {
                 estudiante.setNombre(rs.getString("nombre"));
@@ -98,6 +98,33 @@ public class EstudianteDAO {
         }// Fin finally
         return false;
     } // Fin metodo agregarEstudiante
+
+    //Metodo para modificar estudiante
+    public boolean modificarEstudiante(Estudiante estudiante){
+        PreparedStatement ps;
+        Connection con = getConnection();
+        String sql = "UPDATE estudiantes2022 SET nombre=?, apellido=?, telefono=?, email=? WHERE idestudiantes2022=?";
+        try{
+            ps = con.prepareStatement(sql);
+            ps.setString(1, estudiante.getNombre());
+            ps.setString(2, estudiante.getNombre());
+            ps.setString(3, estudiante.getNombre());
+            ps.setString(4, estudiante.getNombre());
+            ps.setInt(5, estudiante.getIdEstudiante());
+            ps.execute();
+            return true;
+        } catch (Exception e){
+            System.out.println("Error al modigicar estudiante: "+e.getMessage());
+        }// Fin catch
+        finally {
+            try{
+                con.close();
+            }catch (Exception e){
+                System.out.println("Error al cerrar la conexion: "+e.getMessage());
+            }//Fin catch
+        }// Fin finally
+        return false;
+    }// Fin metodo modificarEstudiante
 
 
 
